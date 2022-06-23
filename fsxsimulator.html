@@ -57,15 +57,16 @@
                     <li>Enter the file system details:</li>
                     <ul>
                        <li>File system name: <b>DemoFSxFS</b></li>
+                       <li>Deployment type: <b>Multi-AZ</b></li>
                        <li>SSD storage capacity: <b>2048</b></li>
                        <li>VPC: <b>Default VPC</b></li>
                        <li>Security group: <b>default</b></li>
                        <li>Preferred subnet: <b>us-east-1a</b></li>
                        <li>Standby subnet: <b>us-east-1b</b></li>
                     </ul>
-                    <li>Select the <b>Specify a password</b> option under Security and encryption section.</li>
+                    <li>Select the <b>Specify a password</b> option under <b>Security and encryption</b> section.</li>
                     <li>Enter the password.</li>
-                    <li>Enter the <b>Storage Virtual Machine name</b> as DemoSVM.</li>
+                    <li>Enter <b>DemoSVM</b> as <b>Storage Virtual Machine name</b>.</li>
                     <li>Select the <b>Specify a password</b> option for SVM.</li>
                     <li>Enter the password.</li>
                     <li>Enter the volume details:</li>
@@ -77,20 +78,20 @@
                     </ul>
                     <li>Click on <b>Next</b></li>
                     <li>Click on <b>Create file system</b></li>
-                    <li><b>Refresh</b> the status on the FSx dashboard</li>
+                    <li><b>Refresh</b> the status on the FSx dashboard</li><br/>
                     <blockquote><i>FSx ONTAP file system <b>DemoFSxFS</b> is now created with <b>DemoSVM</b> storage virtual machine and <b>Datastore1</b> volume.</i></blockquote>
 
                     <li>Click on <b>DemoFSxFS</b>.</li>
                     <li>Select the <b>Volumes</b> tab.</li>
-                    <li>Click on the <b>SVM Name</b> for <b>Datastore1</b> volume.</li>
-                    <li>Copy the <b>Management IP address</b> from the console.</li>
+                    <li>Click on the <b>SVM ID</b> for <b>Datastore1</b> volume.</li>
+                    <li>Copy the <b>Management IP address</b> from the console.</li><br/>
 
                     <h6>Mount the DataStore in VMC</h6>
                     <hr>
                     <li>Log in to VMC console.</li>
                     <li>Click on <b>VMCFSxOval</b> SDDC.</li>
                     <li>Click on the <b>Storage</b> tab.</li>
-                    <li>Verify the mounted DataStore</li>
+                    <li>Verify the mounted DataStore</li><br/>
                     <blockquote><i>This concludes the section on mounting DataStore on VMC. The lab is completed. Thank you.</i></blockquote>
 
                  </ol>
