@@ -44,8 +44,56 @@
                   <h5>VMware Cloud with FSx ONTAP</h5>
                </div>
                <div class="card-body overflow-auto">
-                  <ol>
-                  </ol>
+                 <ol>
+                    <h4>FSx Deployment</h4>
+                    <!-- NetApp Account -->
+                    <h6>Create New FSx ONTAP File System</h6>
+                    <hr>
+                    <li>Log in to AWS console. Click on <b>Sign In</b>.</li>
+                    <li>Select the <b>FSx</b> option.</li>
+                    <li>Click on <b>Create file system</b></li>
+                    <li>Choose <b>Amazon FSx for NetApp ONTAP</b> as the file system type and click on <b>Next</b>.</li>
+                    <li>Select the <b>Standard create</b> option.</li>
+                    <li>Enter the file system details:</li>
+                    <ul>
+                       <li>File system name: <b>DemoFSxFS</b></li>
+                       <li>SSD storage capacity: <b>2048</b></li>
+                       <li>VPC: <b>Default VPC</b></li>
+                       <li>Security group: <b>default</b></li>
+                       <li>Preferred subnet: <b>us-east-1a</b></li>
+                       <li>Standby subnet: <b>us-east-1b</b></li>
+                    </ul>
+                    <li>Select the <b>Specify a password</b> option under Security and encryption section.</li>
+                    <li>Enter the password.</li>
+                    <li>Enter the <b>Storage Virtual Machine name</b> as DemoSVM.</li>
+                    <li>Select the <b>Specify a password</b> option for SVM.</li>
+                    <li>Enter the password.</li>
+                    <li>Enter the volume details:</li>
+                    <ul>
+                       <li>Volume name: <b>Datastore1</b></li>
+                       <li>Junction path: <b>/vol1</b></li>
+                       <li>Volume size: <b>2048</b></li>
+                       <li>Storage efficiency: <b>Disabled</b></li>
+                    </ul>
+                    <li>Click on <b>Next</b></li>
+                    <li>Click on <b>Create file system</b></li>
+                    <li><b>Refresh</b> the status on the FSx dashboard</li>
+                    <blockquote><i>FSx ONTAP file system <b>DemoFSxFS</b> is now created with <b>DemoSVM</b> storage virtual machine and <b>Datastore1</b> volume.</i></blockquote>
+
+                    <li>Click on <b>DemoFSxFS</b>.</li>
+                    <li>Select the <b>Volumes</b> tab.</li>
+                    <li>Click on the <b>SVM Name</b> for <b>Datastore1</b> volume.</li>
+                    <li>Copy the <b>Management IP address</b> from the console.</li>
+
+                    <h6>Mount the DataStore in VMC</h6>
+                    <hr>
+                    <li>Log in to VMC console.</li>
+                    <li>Click on <b>VMCFSxOval</b> SDDC.</li>
+                    <li>Click on the <b>Storage</b> tab.</li>
+                    <li>Verify the mounted DataStore</li>
+                    <blockquote><i>This concludes the section on mounting DataStore on VMC. The lab is completed. Thank you.</i></blockquote>
+
+                 </ol>
                </div>
                <!-- <div class="card-footer text-muted">
                   Powered by Vedant and Dhruv
