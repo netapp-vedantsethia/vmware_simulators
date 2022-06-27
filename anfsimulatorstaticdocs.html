@@ -1,0 +1,258 @@
+<html>
+   <head>
+      <title> ANF Simulator</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+   </head>
+   <body id="page-body" class="body">
+      <nav class="navbar navbar-expand-sm navbar-dark sticky-top ps-5 py-2 text-white shadow" style="background-color:#000;>
+         <a class="navbar-brand ps-3 me-5" href="http://www.netapp.com">
+         <img src='https://cloud.netapp.com/hubfs/header-logo-1.svg'  width="79" height="14" alt="NetApp" class="d-inline-block align-text-top" /></a>
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+         <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" style="font-size:13px;letter-spacing:.4px;font-weight:600;" id="mynavbar">
+            <ul class="navbar-nav me-auto ms-5">
+               <li class="nav-item me-5">
+                  <a href="http://www.netapp.com" class="text-light" style="text-decoration:none;">netapp.com</a>
+               </li>
+               <li class="nav-item me-5">
+                  <a href="https://vmc.techzone.vmware.com/azure-vmware-solution" class="text-light" style="text-decoration:none;">Azure VMware Solution</a>
+               </li>
+               <li class="nav-item me-5">
+                  <a href="https://cloud.netapp.com/azure-netapp-files" class="text-light" style="text-decoration:none;">Azure NetApp Files</a>
+               </li>
+               <li class="nav-item me-5">
+                  <a href="https://docs.microsoft.com/en-us/azure/azure-vmware/attach-azure-netapp-files-to-azure-vmware-solution-hosts" class="text-dark" style="text-decoration:none;border-radius:8px;background-color:#fff;padding-top:2px;padding-bottom:2px;padding-right:10px;padding-left:10px;line-height:1;">Documentation</a>
+               </li>
+            </ul>
+            <span class="d-flex pe-5">
+            <a class="text-light pe-3" href="https://www.google.com" role="button" style="text-decoration:none;">Help & Support</a>
+            </span>
+         </div>
+      </nav>
+      <div class="row">
+         <div class="col-md col-lg col-sm-12 me-0 pe-0" id="content" style="height:97vh;width:100vw;" >
+            <iframe class="frame desktop" id="desktopFrame" height="100%" width="100%"  style="border: 0px solid rgba(0, 0, 0, 0.1);" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FbYhSuYlTr4iYoJACZkzNfB%2FANF-Creation%3Fnode-id%3D32%253A574%26scaling%3Dscale-down%26page-id%3D0%253A1%26starting-point-node-id%3D32%253A574%26hide-ui=1" allowfullscreen></iframe>
+         </div>
+         <div class="col-md-3 col-lg-3 col-sm-12 ms-0 ps-0" style="height:97vh;">
+            <div class="card" style="height:97vh;">
+               <div class="card-header">
+                  <h5>Azure VMware Solution with Azure NetApp Files</h5>
+               </div>
+               <div class="card-body overflow-auto">
+                  <ol>
+                     <h4>ANF Deployment</h4>
+                     <!-- NetApp Account -->
+                     <h6>Create New ANF NetApp Account</h6>
+                     <hr>
+                     <li>Click on <b>+ Create</b>.</li>
+                     <li>Enter the details:</li>
+                     <ul>
+                        <li>Name: <b>Demo</b></li>
+                        <li>Subscription: <b>Hybrid Cloud TME Onprem</b></li>
+                        <li>Resource Group: <b>ANFAVSVal2</b></li>
+                        <li>Location: <b>West Europe</b></li>
+                     </ul>
+                     <li>Click on <b>Create</b></li>
+                     <blockquote><i>ANF NetApp Account <b>Demo</b> is now created</i></blockquote>
+                     <!-- Capacity Pool -->
+                     <h6>Create New ANF Capacity Pool</h6>
+                     <hr>
+                     <li>Click on <b>Demo</b></li>
+                     <li>From the Navigation pane, click on <b>Capacity pools</b></li>
+                     <li>Click on <b>+ Add pool</b>.</li>
+                     <li>Enter the details:</li>
+                     <ul>
+                        <li>Name: <b>DemoANFDS</b></li>
+                        <li>Service Level: <b>Ultra</b></li>
+                        <li>Size (TiB): <b>4</b></li>
+                        <li>QoS Type: <b>Auto</b></li>
+                     </ul>
+                     <li>Click on <b>Create</b></li>
+                     <blockquote><i>ANF Capacity Pool <b>DemoANFDS</b> is now created</i></blockquote>
+                     <!-- ANF Volume -->
+                     <h6>Create New ANF Volume</h6>
+                     <hr>
+                     <li>From the Navigation pane, click on <b>Volumes</b></li>
+                     <li>Click on <b>+ Add volume</b>.</li>
+                     <li>Enter the details:</li>
+                     <ul>
+                        <li>Volume name: <b>DemoANFDSVol</b></li>
+                        <li>Capacity Pool: <b>DemoANFDS</b></li>
+                        <li>Quota (GiB): <b>4096</b></li>
+                        <li>Virtual network: <b>ANGAVSVal2</b></li>
+                        <li>Delegated subnet: <b>AVS_ANF_Subnet</b></li>
+                        <li>Network features: <b>Standard</b></li>
+                     </ul>
+                     <li>Click on <b>Next: Protocol ></b></li>
+                     <li>Enter the details:</li>
+                     <ul>
+                        <li>Protocol type: <b>NFS</b></li>
+                        <li>File path: <b>DemoANFDSVol</b></li>
+                        <li>Versions: <b>NFSv3</b></li>
+                        <li>Azure VMware Solution DataStore: <b>Yes</b></li>
+                     </ul>
+                     <li>Review the <b>Export policy</b> and click <b>Next: Tags ></b></li>
+                     <li>Enter the required key-value pair details and click on <b>Review + Create</b></li>
+                     <li>Click on <b>Create</b></li>
+                     <blockquote><i>ANF Volume <b>DemoANFDSVol</b> is now created</i>. Click on <b>demoanfdsvol</b> to view details.</blockquote>
+                     <h4>AVS Deployment</h4>
+                     <!-- AVS Private Cloud -->
+                     <h6>Create New AVS Private Cloud</h6>
+                     <hr>
+                     <li>On the AVS screen, click on <b>+ Create</b>.</li>
+                     <li>Click on <b>Next: Basics ></b>.</li>
+                     <li>Enter the details on the <b>Basics</b> tab:</li>
+                     <ul>
+                        <li>Subscription: <b>Hybrid Cloud TME Onprem</b></li>
+                        <li>Resource Group: <b>ANFAVSVal2</b></li>
+                        <li>Resource Name: <b>ANFDataClus</b></li>
+                        <li>Location: <b>West Europe</b></li>
+                        <li>Size: <b>AV36</b></li>
+                        <li>Number of hosts: <b>3</b></li>
+                        <li>Address block: <b>172.30.156.0/22</b></li>
+                     </ul>
+                     <li>Click on <b>Next: Tags ></b></li>
+                     <li>Enter the required key-value pair details and click on <b>Review + Create</b></li>
+                     <li>Click on <b>Create</b></li>
+                     <blockquote><i>AVS Private Cloud <b>ANFDataClus</b> is now created</i>. Click on <b>ANFDataClus</b> to view details.</blockquote>
+                     <h4>Mount ANF Volume on AVS</h4>
+                     <!-- AVS Volume Mount -->
+                     <!-- <h6></h6> -->
+                     <hr>
+                     <li>From the AVS Navigation pane, click on <b>Storage (preview)</b></li>
+                     <li>Select <b>+ Connect Azure NetApp Files volume</b></li>
+                     <li>Enter the details:</li>
+                     <ul>
+                        <li>Subscription: <b>Hybrid Cloud TME Onprem</b></li>
+                        <li>NetApp account: <b>Demo</b></li>
+                        <li>Capacity pool: <b>DemoANFDS</b></li>
+                        <li>Volume: <b>DemoANFDSVol</b></li>
+                        <li>Client cluster: <b>Cluster-1</b></li>
+                        <li>Datastore name: <b>DemoANFDSVol</b></li>
+                     </ul>
+                     <li>Click <b>Connect</b></li>
+                     <blockquote><i>DataStore <b>DemoANFDSVol</b> is mounted successfully.</i></blockquote>
+                     <h4>Migrate a VM on AVS to ANF DataStore</h4>
+                     <!-- VM Migration -->
+                     <!-- <h6></h6> -->
+                     <hr>
+                     <li>From the AVS Navigation pane, click on <b>Identity</b> to get vCenter server credentials.</li>
+                     <li>Navigate to <b>Virtual Machines</b> in Microsoft Azure portal</li>
+                     <li>Click on <b>ANFAVFVal2JH</b> virtual machine jumphost.</li>
+                     <li>Click on <b>Connect</b> and select <b>RDP</b> from the dropdown menu.</li>
+                     <li>Open the browser window inside the VM and enter the <b>vCenter server URL</b> in the URL search bar</li>
+                     <li>Click on <b>LAUNCH VSPHERE CLIENT (HTML5)</b></li>
+                     <li>Enter the vCenter credentials and click on <b>Login</b></li>
+                     <li>Navigate to the <b>Storage</b> tab and verify if <b>DemoANFDSVol</b> ANF volume is mounted as a DataStore</li>
+                     <li>Navigate back to the <b>VM</b> tab and right click on <b>UbuntuSrv01</b> VM</li>
+                     <li>Click on <b>Migrate</b></li>
+                     <li>Select the <b>Change storage only</b> option and click on <b>Next</b></li>
+                     <li>Under VM Storage Policy, select <b>DataStore Default</b></li>
+                     <li>Select <b>DemoANFDSVol</b> and click on <b>Next</b></li>
+                     <li>Review the changes and click on <b>Finish</b></li>
+                     <li>Monitor the migration activity in the <b>Recent Tasks</b> section</li>
+                     <li>Navigate to the <b>Storage</b> tab once completed</li>
+                     <li>Click on <b>VMs</b> section under <b>DemoANFDSVol</b></li>
+                     <blockquote><i>The VM <b>UbuntuSrv01</b> can be seen sitting on the ANF volume added as a DataStore on AVS. This completes the section on migrating a VM to ANF DataStore on AVS</i></blockquote>
+                     <h4>Resize ANF volume</h4>
+                     <!-- Resize volume -->
+                     <h6>Resize Capacity Pool</h6>
+                     <hr>
+                     <li>Click on <b>Demo</b> NetApp Account in the ANF section of Microsoft Azure</li>
+                     <li>Navigate to <b>Capacity Pools</b></li>
+                     <li>Click on the three dots next to <b>DemoANFDS</b> and click on <b>Resize</b></li>
+                     <li>Change the size from 4 TiB to <b>8 TiB</b></li>
+                     <li>Click on <b>OK</b>. The capacity pool has been resized to 8 TiB</li>
+                     <br/>
+                     <h6>Resize Volume</h6>
+                     <hr>
+                     <li>Click on <b>Volumes</b></li>
+                     <li>Click on the three dots next to <b>DemoANFDSVol</b> and click on <b>Resize</b></li>
+                     <li>Change Quota from 4096 GiB to <b>8192 GiB</b></li>
+                     <li>Click on <b>OK</b>. The volume has been resized to 8192 GiB</li>
+                     <br/>
+                     <h6>Verification on AVS</h6>
+                     <hr>
+                     <li>Navigate back to the VM from where we accessed the vCenter</li>
+                     <li>Navigate to the <b>Storage</b> tab and right-click on <b>DemoANFDSVol</b></li>
+                     <li>Click on <b>Refresh Capacity Information</b></li>
+                     <blockquote><i>The Storage capacity can now be seen to be updated from 4 TiB to 8 Tib. This concludes the section on resizing the ANF volume size</i></blockquote>
+                     <h4>Disconnect and Delete ANF volume</h4>
+                     <!-- Delete volume -->
+                     <h6>Disconnect ANF volume from AVS</h6>
+                     <hr>
+                     <li>On the Azure VMware Solutions section in Microsoft Azure, click on <b>ANFDataClus</b></li>
+                     <li>Navigate to <b>Storage (preview)</b></li>
+                     <li>Click on the three dots next to <b>DemoANFDSVol</b> and click on <b>Disconnect</b></li>
+                     <li>Click on <b>OK</b>. The volume has been disconnected from AVS</li>
+                     <br/>
+                     <h6>Delete the ANF volume</h6>
+                     <hr>
+                     <li>Navigate to the ANF volume</li>
+                     <li>On the ANF <b>DemoANFDSVol</b> volume page, click on <b>Delete</b></li>
+                     <li>Type the name <b>demoanfdsvol</b></li>
+                     <li>Click on <b>Delete</b>. The volume has now been deleted</li>
+                     <br/>
+                     <h6>Delete the ANF Capacity Pool</h6>
+                     <hr>
+                     <li>Navigate to the Capacity pool</li>
+                     <li>Click on the three dots next to <b>DemoANFDS</b> and click on <b>Delete</b></li>
+                     <li>Click on <b>Yes</b>. The capacity pool has now been deleted</li>
+                     <br/>
+                     <h6>Delete the ANF NetApp account</h6>
+                     <hr>
+                     <li>Navigate to the Overview</li>
+                     <li>Click on <b>Delete</b></li>
+                     <li>Click on <b>Yes</b>. The NetApp account has now been deleted</li>
+                     <blockquote><i>This concludes the section on disconnecting and deleting ANF volume. The lab is completed. Thank you.</i></blockquote>
+                  </ol>
+               </div>
+               <!-- <div class="card-footer text-muted">
+                  Powered by Vedant and Dhruv
+                  </div> -->
+            </div>
+         </div>
+      </div>
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-2 ps-5 pe-5 text-light" style="background-color:#000;>
+         <p class="col-md-4 mb-0 ps-3 text-muted">
+         <small>&copy; 2022 NetApp, Inc - Powered by NetApp Solutions Engineering Team</small></p>
+         <ul class="nav col-md-4 pe-3 justify-content-end">
+            <img src='https://cloud.netapp.com/hubfs/header-logo-1.svg'  width="79" height="14" alt="NetApp" class="d-inline-block align-text-top" />
+         </ul>
+      </footer>
+      <div class="modal" tabindex="-1" id="startModal">
+         <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title">ANF + AVS Simulator</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+               </div>
+               <div class="modal-body">
+                  <h5>Welcome to NetApp ANF + AVS simulator.</h5>
+                  <h6>Instructions:</h6>
+                  <ul>
+                     <li>This is a simulator, <b>NOT</b> a real time environment.</li>
+                     <li>Use mouse clicks to navigate through the simulator. Only the highlighted sections can be clicked.</li>
+                     <li>Follow the documentation steps mentioned on the right panel.</li>
+                     <li>You can also use left/right arrow keys or browser's back/forward buttons to navigate through the simulator.</li>
+                     <li>In case of any queries/feedback please write to <a href="mailto:vedant.sethia@netapp.com,dhruv.tyagi@netapp.com">NetApp Solutions Team</a></li>
+                  </ul>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Start Lab</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+   <script type="text/javascript">
+      $(window).on('load', function() {
+          $('#startModal').modal('show');
+      });
+   </script>
+</html>
