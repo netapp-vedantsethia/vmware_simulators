@@ -1,6 +1,9 @@
 # Simulators for ANF + AVS and FSx + VMC
 Simulators for Azure NetApp Files (ANF) with Azure VMware Solution (AVS) and AWS FSx ONTAP with VMware Cloud (VMC)
 
+ANF-AVS Simulator: https://netapp-solutions.github.io/vmware_simulators/anfsimulator
+FSx-VMC Simulator: https://netapp-solutions.github.io/vmware_simulators/fsxsimulator
+
 ## License
 By accessing, downloading, installing or using the content in this repository, you agree the terms of the License laid out in License file.
 
